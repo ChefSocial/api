@@ -1,0 +1,25 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# Ignore Vagrant
+.vagrant
+
+# Ignore Tests & Reports
+.rspec
+/spec/reports/*.*
+coverage
+
+# Ignore environment files
+.env.*
+.env
+
+# Ignore file uploads
+/public/*
+/public/uploads
+/public/media
+/public/sitemap.*

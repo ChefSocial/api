@@ -1,5 +1,7 @@
 class Chef < ActiveRecord::Base
 
-	belongs_to :address
+	has_many :menus
+	has_many :bookings
+	has_one :address, as: :addressable
 
 end

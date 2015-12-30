@@ -1,6 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  addressable_id: 1
+  addressable_type: MyString
   address1: MyString
   address2: MyString
   city: MyString
@@ -8,6 +10,8 @@ one:
   pincode: MyString
 
 two:
+  addressable_id: 1
+  addressable_type: MyString
   address1: MyString
   address2: MyString
   city: MyString

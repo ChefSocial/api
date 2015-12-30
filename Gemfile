@@ -86,3 +86,6 @@ gem 'grape-swagger-rails'
 # Debugging
 gem 'pry-rails', :group => :development
 
+# ERD Diagram generation for the application
+gem "rails-erd"
+

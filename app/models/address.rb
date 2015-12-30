@@ -1,5 +1,5 @@
 class Address < ActiveRecord::Base
 
-	has_one :chef
+	belongs_to :addressable, polymorphic: true
 
 end

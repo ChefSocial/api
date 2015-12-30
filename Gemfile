@@ -83,3 +83,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 
+# Debugging
+gem 'pry-rails', :group => :development
+

@@ -8,7 +8,7 @@ module API
 				desc "Returns all chefs."
 				get "" do
 					Chef.all
-				end
+				end	
 
 				desc "Returns a chef."
 				params do
@@ -30,6 +30,7 @@ module API
 				post do
 					# binding.pry
 					Chef.create!(params)
+
 				end
 
 				desc "Deletes a chef."

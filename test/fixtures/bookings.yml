@@ -1,19 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  chef_id: 1
-  date: 2015-12-31 00:21:39
-  start_time: 2015-12-31 00:21:39
-  end_time: 2015-12-31 00:21:39
+  menu_id: 1
+  date: 2016-01-02 21:59:53
+  start_time: 2016-01-02 21:59:53
+  end_time: 2016-01-02 21:59:53
   cost_to_chef: 1
   cost_to_customer: 1
 
 two:
-  user_id: 1
-  chef_id: 1
-  date: 2015-12-31 00:21:39
-  start_time: 2015-12-31 00:21:39
-  end_time: 2015-12-31 00:21:39
+  menu_id: 1
+  date: 2016-01-02 21:59:53
+  start_time: 2016-01-02 21:59:53
+  end_time: 2016-01-02 21:59:53
   cost_to_chef: 1
   cost_to_customer: 1

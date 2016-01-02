@@ -1,7 +1,6 @@
 class Booking < ActiveRecord::Base
 
-	belongs_to :chef
-	has_one :menu
-	has_many :meals, through: :menu
+	belongs_to :menu
+	has_one :address, as: :addressable
 
 end

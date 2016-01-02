@@ -8,7 +8,6 @@ one:
   max_capacity: 1
   time_to_prepare: 1
   description: MyString
-  booking_id: 1
 
 two:
   chef_id: 1
@@ -18,4 +17,3 @@ two:
   max_capacity: 1
   time_to_prepare: 1
   description: MyString
-  booking_id: 1

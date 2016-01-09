@@ -2,11 +2,13 @@
 #
 # Table name: menus
 #
-#  id         :integer          not null, primary key
-#  chef_id    :integer
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  chef_id      :integer
+#  name         :string
+#  max_capacity :integer
+#  min_capacity :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -14,7 +16,11 @@
 one:
   chef_id: 1
   name: MyString
+  max_capacity: 1
+  min_capacity: 1
 
 two:
   chef_id: 1
   name: MyString
+  max_capacity: 1
+  min_capacity: 1

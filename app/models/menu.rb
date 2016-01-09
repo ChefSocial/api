@@ -2,11 +2,13 @@
 #
 # Table name: menus
 #
-#  id         :integer          not null, primary key
-#  chef_id    :integer
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  chef_id      :integer
+#  name         :string
+#  max_capacity :integer
+#  min_capacity :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 class Menu < ActiveRecord::Base

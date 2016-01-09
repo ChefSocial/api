@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109125527) do
+ActiveRecord::Schema.define(version: 20160109131315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "assemblements", force: :cascade do |t|
-    t.integer  "assembly_id"
-    t.integer  "part_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "assemblies", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.string   "menu_id"
@@ -76,14 +63,17 @@ ActiveRecord::Schema.define(version: 20160109125527) do
   create_table "menus", force: :cascade do |t|
     t.integer  "chef_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "max_capacity"
+    t.integer  "min_capacity"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table "parts", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "reviews", force: :cascade do |t|
+    t.string   "description"
+    t.float    "rating"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

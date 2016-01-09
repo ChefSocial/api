@@ -15,5 +15,6 @@ class Chef < ActiveRecord::Base
 
 	has_many :menus
 	has_many :bookings, through: :menus
+	has_many :reviews
 
 end

@@ -14,8 +14,9 @@ module API
 				params do
 					requires :id, type: String, desc: "Id of the chef"
 				end
-				get ":id" do
-					Chef.find_by_id(params[:id])
+				get "/chef_id/:id" do
+					chef = Chef.find_by_id(params[:id])
+					# binding.pry
 				end
 
 				desc "Creates a new chef."
@@ -28,18 +29,16 @@ module API
 				# 	# requires :image, type: String, desc: "Image url of the chef"
 				# end
 				post do
-					# binding.pry
 					Chef.create!(params)
-
 				end
 
-				desc "Deletes a chef."
-				params do
-					requires :id, desc: "Id of the chef to be deleted"
-				end
-				delete ":id" do
-					Chef.find_by_id(params[:id]).destroy
-				end
+				# desc "Deletes a chef."
+				# params do
+				# 	requires :id, desc: "Id of the chef to be deleted"
+				# end
+				# delete ":id" do
+				# 	Chef.find_by_id(params[:id]).destroy
+				# end
 
 			end
 		end

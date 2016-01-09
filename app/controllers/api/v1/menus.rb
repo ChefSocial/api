@@ -18,7 +18,7 @@ module API
 					Menu.find_by_id(params[:id])
 				end
 
-				desc "Creates a new Menu."
+				# desc "Creates a new Menu."
 				# params do
 				# 	requires :body, documentation: {
 				# 		type: String, 
@@ -27,19 +27,18 @@ module API
 				# 	}
 				# 	# requires :image, type: String, desc: "Image url of the Menu"
 				# end
-				post do
-					# binding.pry
-					Menu.create!(params)
+				# post do
+				# 	# binding.pry
+				# 	Menu.create!(params)
+				# end
 
-				end
-
-				desc "Deletes a Menu."
-				params do
-					requires :id, desc: "Id of the Menu to be deleted"
-				end
-				delete ":id" do
-					Menu.find_by_id(params[:id]).destroy
-				end
+				# desc "Deletes a Menu."
+				# params do
+				# 	requires :id, desc: "Id of the Menu to be deleted"
+				# end
+				# delete ":id" do
+				# 	Menu.find_by_id(params[:id]).destroy
+				# end
 
 			end
 		end

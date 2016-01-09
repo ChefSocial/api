@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: menus
+# Table name: menu_items_categories
 #
 #  id         :integer          not null, primary key
-#  chef_id    :integer
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-class MenuTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-end
+one:
+  name: MyString
+
+two:
+  name: MyString

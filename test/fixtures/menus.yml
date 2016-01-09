@@ -1,19 +1,20 @@
+# == Schema Information
+#
+# Table name: menus
+#
+#  id         :integer          not null, primary key
+#  chef_id    :integer
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   chef_id: 1
-  cuisine: MyString
   name: MyString
-  min_capacity: 1
-  max_capacity: 1
-  time_to_prepare: 1
-  description: MyString
 
 two:
   chef_id: 1
-  cuisine: MyString
   name: MyString
-  min_capacity: 1
-  max_capacity: 1
-  time_to_prepare: 1
-  description: MyString

@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: bookings
+# Table name: event_cuisines
 #
 #  id         :integer          not null, primary key
-#  menu_id    :string
-#  user_id    :string
+#  menu_id    :integer
+#  cuisine_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Booking < ActiveRecord::Base
+class EventCuisine < ActiveRecord::Base
 
+	belongs_to :cuisine
 	belongs_to :menu
-	belongs_to :user
 
 end

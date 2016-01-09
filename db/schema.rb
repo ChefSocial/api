@@ -11,71 +11,87 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102162953) do
+ActiveRecord::Schema.define(version: 20160109125527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "addresses", force: :cascade do |t|
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
-    t.string   "address1"
-    t.string   "address2"
-    t.string   "city"
-    t.string   "country"
-    t.string   "pincode"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+  create_table "assemblements", force: :cascade do |t|
+    t.integer  "assembly_id"
+    t.integer  "part_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.integer  "menu_id"
-    t.datetime "date"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "cost_to_chef"
-    t.integer  "cost_to_customer"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "chefs", force: :cascade do |t|
+  create_table "assemblies", force: :cascade do |t|
     t.string   "name"
-    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "meals", force: :cascade do |t|
-    t.string   "type"
+  create_table "bookings", force: :cascade do |t|
+    t.string   "menu_id"
+    t.string   "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chefs", force: :cascade do |t|
+    t.string   "address"
     t.string   "name"
+    t.string   "email"
+    t.float    "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cuisines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "event_cuisines", force: :cascade do |t|
     t.integer  "menu_id"
+    t.integer  "cuisine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.integer  "menu_id"
+    t.string   "name"
+    t.integer  "menu_items_category_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "menu_items_categories", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "menus", force: :cascade do |t|
     t.integer  "chef_id"
-    t.string   "cuisine"
     t.string   "name"
-    t.integer  "min_capacity"
-    t.integer  "max_capacity"
-    t.integer  "time_to_prepare"
-    t.string   "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "prices", force: :cascade do |t|
-    t.integer  "menu_id"
-    t.integer  "chef_low"
-    t.integer  "chef_mid"
-    t.integer  "chef_high"
-    t.integer  "customer_low"
-    t.integer  "customer_mid"
-    t.integer  "customer_high"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "parts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

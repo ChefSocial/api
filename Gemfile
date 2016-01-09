@@ -89,3 +89,6 @@ gem 'pry-rails', :group => :development
 # ERD Diagram generation for the application
 gem "rails-erd"
 
+# Gem to Annotate Rails classes with schema and routes info 
+gem 'annotate'
+

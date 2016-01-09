@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: menu_items
+#
+#  id                     :integer          not null, primary key
+#  menu_id                :integer
+#  name                   :string
+#  menu_items_category_id :integer
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu_id: 1
+  name: MyString
+  menu_items_category_id: 1
+
+two:
+  menu_id: 1
+  name: MyString
+  menu_items_category_id: 1

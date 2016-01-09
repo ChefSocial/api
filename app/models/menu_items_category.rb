@@ -1,18 +1,15 @@
 # == Schema Information
 #
-# Table name: menus
+# Table name: menu_items_categories
 #
 #  id         :integer          not null, primary key
-#  chef_id    :integer
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
+class MenuItemsCategory < ActiveRecord::Base
 
-class MenuTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+	has_many :menu_items
+
 end

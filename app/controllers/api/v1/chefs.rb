@@ -2,6 +2,8 @@ module API
 	module V1
 		class Chefs < Grape::API
 			include API::V1::Defaults
+			
+			# http_basic_authenticate_with name: "admin", password: "secret"
 
 			resource :chefs do
 				
@@ -14,7 +16,7 @@ module API
 				params do
 					requires :id, type: String, desc: "Id of the chef"
 				end
-				get "/chef_id/:id" do
+				get "/:id" do
 					chef = Chef.find_by_id(params[:id])
 					# binding.pry
 				end

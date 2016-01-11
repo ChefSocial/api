@@ -24,8 +24,7 @@ gem 'grape-scaffold'
 
 # Soft delete
 gem 'paranoia', '~> 2.0'
-# Generate ERD diagram
-gem 'rails-erd'
+
 # Introspects your database string field maximum lengths and automatically defines length validations.
 gem 'validates_lengths_from_database'
 # Attachment for images and files
@@ -89,6 +88,8 @@ gem 'pry-rails', :group => :development
 # ERD Diagram generation for the application
 gem "rails-erd"
 
-# Gem to Annotate Rails classes with schema and routes info 
-gem 'annotate'
+# Gem to add authentication REST End points for users
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'devise'
 

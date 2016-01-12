@@ -21,8 +21,15 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Run mailcatcher(Install the gem, then, run the command - mailcatcher)
 
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+============================= NOTES =============================
+
+* Custom email templates for authentication can be configured at - https://github.com/lynndylanhurley/devise_token_auth#email-template-overrides
+
+

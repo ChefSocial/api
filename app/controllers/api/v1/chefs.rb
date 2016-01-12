@@ -2,8 +2,9 @@ module API
 	module V1
 		class Chefs < Grape::API
 			include API::V1::Defaults
-			
+
 			# http_basic_authenticate_with name: "admin", password: "secret"
+			
 
 			resource :chefs do
 				

@@ -16,6 +16,13 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # Mailer related settings(Make sure you have mailcatcher running in the development envirnment at port 1025)
+  Rails.application.configure do
+    config.action_mailer.default_url_options = { :host => 'localhost' }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = { :address => 'localhost', :port => 1025 }
+  end
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

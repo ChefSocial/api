@@ -8,8 +8,9 @@ module API
         version "v1", using: :path
         default_format :json
         format :json
-        formatter :json, 
-             Grape::Formatter::ActiveModelSerializers
+        formatter :json, Grape::Formatter::ActiveModelSerializers
+        rescue_from :all, :backtrace => true
+        # error_formatter :json, API::ErrorFormatter
 
         helpers do
           def permitted_params

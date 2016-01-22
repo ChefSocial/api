@@ -1,15 +1,13 @@
 module API
 	module V1
 		class Chefs < Grape::API
-			include API::V1::Defaults
-
 			# http_basic_authenticate_with name: "admin", password: "secret"
-			
 
 			resource :chefs do
 				
 				desc "Returns all chefs."
 				get "" do
+					# error!("401 Unauthorized", 401) unless authenticated
 					Chef.all
 				end	
 

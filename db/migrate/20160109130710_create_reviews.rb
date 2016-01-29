@@ -1,6 +1,6 @@
 class CreateReviews < ActiveRecord::Migration
   def change
-    create_table :reviews do |t|
+    create_table :reviews, id: :uuid do |t|
       t.string :description
       t.float :rating
 

@@ -15,15 +15,16 @@ ActiveRecord::Schema.define(version: 20160122103251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "bookings", force: :cascade do |t|
-    t.string   "menu_id"
-    t.string   "user_id"
+  create_table "bookings", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "menu_id"
+    t.uuid     "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "chefs", force: :cascade do |t|
+  create_table "chefs", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "address"
     t.string   "name"
     t.string   "email"
@@ -32,36 +33,36 @@ ActiveRecord::Schema.define(version: 20160122103251) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cuisines", force: :cascade do |t|
+  create_table "cuisines", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "event_cuisines", force: :cascade do |t|
-    t.integer  "menu_id"
-    t.integer  "cuisine_id"
+  create_table "event_cuisines", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "menu_id"
+    t.uuid     "cuisine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "menu_items", force: :cascade do |t|
-    t.integer  "menu_id"
+  create_table "menu_items", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "menu_id"
     t.string   "name"
-    t.integer  "menu_items_category_id"
+    t.uuid     "menu_items_category_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  create_table "menu_items_categories", force: :cascade do |t|
+  create_table "menu_items_categories", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "menus", force: :cascade do |t|
-    t.integer  "chef_id"
+  create_table "menus", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "chef_id"
     t.string   "name"
     t.integer  "max_capacity"
     t.integer  "min_capacity"
@@ -69,14 +70,14 @@ ActiveRecord::Schema.define(version: 20160122103251) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
+  create_table "reviews", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "description"
     t.float    "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
     t.string   "uid",                    default: "",      null: false
     t.string   "encrypted_password",     default: "",      null: false

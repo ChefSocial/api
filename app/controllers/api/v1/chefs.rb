@@ -30,7 +30,8 @@ module API
 				# 	# requires :image, type: String, desc: "Image url of the chef"
 				# end
 				post do
-					Chef.create!(params)
+					# binding.pry
+					Chef.create!(params.except(:access_token))
 				end
 
 				# desc "Deletes a chef."

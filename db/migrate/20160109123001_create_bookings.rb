@@ -1,8 +1,8 @@
 class CreateBookings < ActiveRecord::Migration
   def change
-    create_table :bookings do |t|
-      t.string :menu_id
-      t.string :user_id
+    create_table :bookings, id: :uuid do |t|
+      t.uuid :menu_id
+      t.uuid :user_id
 
       t.timestamps null: false
     end

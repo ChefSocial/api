@@ -3,9 +3,9 @@ module API
     include V1::Defaults
     # include V1::Authentication
 
-    before do
-      error!("401 Unauthorized", 401) unless authenticated
-    end
+    # before do
+    #   error!("401 Unauthorized", 401) unless authenticated
+    # end
 
     helpers do
       # def warden

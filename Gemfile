@@ -93,3 +93,6 @@ gem 'devise_token_auth'
 gem 'omniauth'
 gem 'devise'
 
+#gem to authenticate the grape api's
+gem 'grape_devise_token_auth'
+

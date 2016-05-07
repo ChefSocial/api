@@ -27,7 +27,8 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  authentication_token   :string
-#
+
+# this model has access to these methods valid_token?, create_new_auth_token, build_auth_header
 
 class User < ActiveRecord::Base
   # Include default devise modules.

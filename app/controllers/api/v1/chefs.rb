@@ -2,12 +2,16 @@ module API
 	module V1
 		class Chefs < Grape::API
 			# http_basic_authenticate_with name: "admin", password: "secret"
+			auth :grape_devise_token_auth, resource_class: :user
+
+  			helpers GrapeDeviseTokenAuth::AuthHelpers
 
 			resource :chefs do
 				
 				desc "Returns all chefs."
 				get "" do
 					# error!("401 Unauthorized", 401) unless authenticated
+					authenticate_user!
 					Chef.all
 				end	
 
